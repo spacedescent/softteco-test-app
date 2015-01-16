@@ -1,0 +1,500 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F3431FB71A654AF80092F753 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = F3431FB61A654AF80092F753 /* Person.m */; };
+		F3431FBD1A654F830092F753 /* Person+AddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = F3431FBC1A654F830092F753 /* Person+AddressBook.m */; };
+		F3431FC11A65A3300092F753 /* PersonInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3431FC01A65A3300092F753 /* PersonInfoCell.m */; };
+		F3BAE86A1A65205100A9570D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BAE8691A65205100A9570D /* main.m */; };
+		F3BAE86D1A65205100A9570D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BAE86C1A65205100A9570D /* AppDelegate.m */; };
+		F3BAE8701A65205100A9570D /* SoftTecoTestApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3BAE86E1A65205100A9570D /* SoftTecoTestApp.xcdatamodeld */; };
+		F3BAE8731A65205100A9570D /* PersonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BAE8721A65205100A9570D /* PersonsViewController.m */; };
+		F3BAE8761A65205100A9570D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3BAE8741A65205100A9570D /* Main.storyboard */; };
+		F3BAE8781A65205100A9570D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3BAE8771A65205100A9570D /* Images.xcassets */; };
+		F3BAE87B1A65205100A9570D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3BAE8791A65205100A9570D /* LaunchScreen.xib */; };
+		F3BAE8871A65205200A9570D /* SoftTecoTestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BAE8861A65205200A9570D /* SoftTecoTestAppTests.m */; };
+		F3BAE8911A6520C900A9570D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BAE8901A6520C900A9570D /* AddressBook.framework */; };
+		F3BE9E2E1A67CB4B00093FFE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BE9E2D1A67CB4B00093FFE /* FacebookSDK.framework */; };
+		F3BE9E311A67D6C300093FFE /* FBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BE9E301A67D6C300093FFE /* FBLoginViewController.m */; };
+		F3BE9E341A67E5D000093FFE /* PersonFBDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BE9E331A67E5D000093FFE /* PersonFBDetailsViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F3BAE8811A65205100A9570D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3BAE85C1A65205100A9570D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3BAE8631A65205100A9570D;
+			remoteInfo = SoftTecoTestApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F3431FB51A654AF80092F753 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		F3431FB61A654AF80092F753 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		F3431FBB1A654F830092F753 /* Person+AddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+AddressBook.h"; sourceTree = "<group>"; };
+		F3431FBC1A654F830092F753 /* Person+AddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+AddressBook.m"; sourceTree = "<group>"; };
+		F3431FBF1A65A3300092F753 /* PersonInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoCell.h; sourceTree = "<group>"; };
+		F3431FC01A65A3300092F753 /* PersonInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoCell.m; sourceTree = "<group>"; };
+		F3BAE8641A65205100A9570D /* SoftTecoTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoftTecoTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3BAE8681A65205100A9570D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3BAE8691A65205100A9570D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F3BAE86B1A65205100A9570D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F3BAE86C1A65205100A9570D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F3BAE86F1A65205100A9570D /* SoftTecoTestApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SoftTecoTestApp.xcdatamodel; sourceTree = "<group>"; };
+		F3BAE8711A65205100A9570D /* PersonsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonsViewController.h; sourceTree = "<group>"; };
+		F3BAE8721A65205100A9570D /* PersonsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonsViewController.m; sourceTree = "<group>"; };
+		F3BAE8751A65205100A9570D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F3BAE8771A65205100A9570D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F3BAE87A1A65205100A9570D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F3BAE8801A65205100A9570D /* SoftTecoTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoftTecoTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3BAE8851A65205200A9570D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3BAE8861A65205200A9570D /* SoftTecoTestAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoftTecoTestAppTests.m; sourceTree = "<group>"; };
+		F3BAE8901A6520C900A9570D /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		F3BE9E2D1A67CB4B00093FFE /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		F3BE9E2F1A67D6C300093FFE /* FBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginViewController.h; sourceTree = "<group>"; };
+		F3BE9E301A67D6C300093FFE /* FBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginViewController.m; sourceTree = "<group>"; };
+		F3BE9E321A67E5D000093FFE /* PersonFBDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonFBDetailsViewController.h; sourceTree = "<group>"; };
+		F3BE9E331A67E5D000093FFE /* PersonFBDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonFBDetailsViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F3BAE8611A65205100A9570D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3BE9E2E1A67CB4B00093FFE /* FacebookSDK.framework in Frameworks */,
+				F3BAE8911A6520C900A9570D /* AddressBook.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3BAE87D1A65205100A9570D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F3431FB41A654A940092F753 /* Core Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				F3431FBB1A654F830092F753 /* Person+AddressBook.h */,
+				F3431FBC1A654F830092F753 /* Person+AddressBook.m */,
+				F3BAE86E1A65205100A9570D /* SoftTecoTestApp.xcdatamodeld */,
+				F3431FB51A654AF80092F753 /* Person.h */,
+				F3431FB61A654AF80092F753 /* Person.m */,
+			);
+			name = "Core Data Model";
+			sourceTree = "<group>";
+		};
+		F3BAE85B1A65205100A9570D = {
+			isa = PBXGroup;
+			children = (
+				F3BE9E2D1A67CB4B00093FFE /* FacebookSDK.framework */,
+				F3BAE8901A6520C900A9570D /* AddressBook.framework */,
+				F3BAE8661A65205100A9570D /* SoftTecoTestApp */,
+				F3BAE8831A65205200A9570D /* SoftTecoTestAppTests */,
+				F3BAE8651A65205100A9570D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F3BAE8651A65205100A9570D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3BAE8641A65205100A9570D /* SoftTecoTestApp.app */,
+				F3BAE8801A65205100A9570D /* SoftTecoTestAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F3BAE8661A65205100A9570D /* SoftTecoTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				F3BAE86B1A65205100A9570D /* AppDelegate.h */,
+				F3BAE86C1A65205100A9570D /* AppDelegate.m */,
+				F3BAE8711A65205100A9570D /* PersonsViewController.h */,
+				F3BAE8721A65205100A9570D /* PersonsViewController.m */,
+				F3431FBF1A65A3300092F753 /* PersonInfoCell.h */,
+				F3431FC01A65A3300092F753 /* PersonInfoCell.m */,
+				F3BE9E2F1A67D6C300093FFE /* FBLoginViewController.h */,
+				F3BE9E301A67D6C300093FFE /* FBLoginViewController.m */,
+				F3BE9E321A67E5D000093FFE /* PersonFBDetailsViewController.h */,
+				F3BE9E331A67E5D000093FFE /* PersonFBDetailsViewController.m */,
+				F3BAE8741A65205100A9570D /* Main.storyboard */,
+				F3BAE8771A65205100A9570D /* Images.xcassets */,
+				F3BAE8791A65205100A9570D /* LaunchScreen.xib */,
+				F3431FB41A654A940092F753 /* Core Data Model */,
+				F3BAE8671A65205100A9570D /* Supporting Files */,
+			);
+			path = SoftTecoTestApp;
+			sourceTree = "<group>";
+		};
+		F3BAE8671A65205100A9570D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F3BAE8681A65205100A9570D /* Info.plist */,
+				F3BAE8691A65205100A9570D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F3BAE8831A65205200A9570D /* SoftTecoTestAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				F3BAE8861A65205200A9570D /* SoftTecoTestAppTests.m */,
+				F3BAE8841A65205200A9570D /* Supporting Files */,
+			);
+			path = SoftTecoTestAppTests;
+			sourceTree = "<group>";
+		};
+		F3BAE8841A65205200A9570D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F3BAE8851A65205200A9570D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F3BAE8631A65205100A9570D /* SoftTecoTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3BAE88A1A65205200A9570D /* Build configuration list for PBXNativeTarget "SoftTecoTestApp" */;
+			buildPhases = (
+				F3BAE8601A65205100A9570D /* Sources */,
+				F3BAE8611A65205100A9570D /* Frameworks */,
+				F3BAE8621A65205100A9570D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SoftTecoTestApp;
+			productName = SoftTecoTestApp;
+			productReference = F3BAE8641A65205100A9570D /* SoftTecoTestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F3BAE87F1A65205100A9570D /* SoftTecoTestAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3BAE88D1A65205200A9570D /* Build configuration list for PBXNativeTarget "SoftTecoTestAppTests" */;
+			buildPhases = (
+				F3BAE87C1A65205100A9570D /* Sources */,
+				F3BAE87D1A65205100A9570D /* Frameworks */,
+				F3BAE87E1A65205100A9570D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3BAE8821A65205100A9570D /* PBXTargetDependency */,
+			);
+			name = SoftTecoTestAppTests;
+			productName = SoftTecoTestAppTests;
+			productReference = F3BAE8801A65205100A9570D /* SoftTecoTestAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F3BAE85C1A65205100A9570D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Alexander Akimov";
+				TargetAttributes = {
+					F3BAE8631A65205100A9570D = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					F3BAE87F1A65205100A9570D = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = F3BAE8631A65205100A9570D;
+					};
+				};
+			};
+			buildConfigurationList = F3BAE85F1A65205100A9570D /* Build configuration list for PBXProject "SoftTecoTestApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F3BAE85B1A65205100A9570D;
+			productRefGroup = F3BAE8651A65205100A9570D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F3BAE8631A65205100A9570D /* SoftTecoTestApp */,
+				F3BAE87F1A65205100A9570D /* SoftTecoTestAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F3BAE8621A65205100A9570D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3BAE8761A65205100A9570D /* Main.storyboard in Resources */,
+				F3BAE87B1A65205100A9570D /* LaunchScreen.xib in Resources */,
+				F3BAE8781A65205100A9570D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3BAE87E1A65205100A9570D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F3BAE8601A65205100A9570D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3431FC11A65A3300092F753 /* PersonInfoCell.m in Sources */,
+				F3BAE8701A65205100A9570D /* SoftTecoTestApp.xcdatamodeld in Sources */,
+				F3BE9E311A67D6C300093FFE /* FBLoginViewController.m in Sources */,
+				F3BAE86D1A65205100A9570D /* AppDelegate.m in Sources */,
+				F3431FBD1A654F830092F753 /* Person+AddressBook.m in Sources */,
+				F3431FB71A654AF80092F753 /* Person.m in Sources */,
+				F3BAE8731A65205100A9570D /* PersonsViewController.m in Sources */,
+				F3BAE86A1A65205100A9570D /* main.m in Sources */,
+				F3BE9E341A67E5D000093FFE /* PersonFBDetailsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3BAE87C1A65205100A9570D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3BAE8871A65205200A9570D /* SoftTecoTestAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F3BAE8821A65205100A9570D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3BAE8631A65205100A9570D /* SoftTecoTestApp */;
+			targetProxy = F3BAE8811A65205100A9570D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F3BAE8741A65205100A9570D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F3BAE8751A65205100A9570D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F3BAE8791A65205100A9570D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F3BAE87A1A65205100A9570D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F3BAE8881A65205200A9570D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F3BAE8891A65205200A9570D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F3BAE88B1A65205200A9570D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Sp/Documents/FacebookSDK,
+				);
+				INFOPLIST_FILE = SoftTecoTestApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F3BAE88C1A65205200A9570D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Sp/Documents/FacebookSDK,
+				);
+				INFOPLIST_FILE = SoftTecoTestApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F3BAE88E1A65205200A9570D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SoftTecoTestAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoftTecoTestApp.app/SoftTecoTestApp";
+			};
+			name = Debug;
+		};
+		F3BAE88F1A65205200A9570D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SoftTecoTestAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoftTecoTestApp.app/SoftTecoTestApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F3BAE85F1A65205100A9570D /* Build configuration list for PBXProject "SoftTecoTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3BAE8881A65205200A9570D /* Debug */,
+				F3BAE8891A65205200A9570D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3BAE88A1A65205200A9570D /* Build configuration list for PBXNativeTarget "SoftTecoTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3BAE88B1A65205200A9570D /* Debug */,
+				F3BAE88C1A65205200A9570D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3BAE88D1A65205200A9570D /* Build configuration list for PBXNativeTarget "SoftTecoTestAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3BAE88E1A65205200A9570D /* Debug */,
+				F3BAE88F1A65205200A9570D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F3BAE86E1A65205100A9570D /* SoftTecoTestApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F3BAE86F1A65205100A9570D /* SoftTecoTestApp.xcdatamodel */,
+			);
+			currentVersion = F3BAE86F1A65205100A9570D /* SoftTecoTestApp.xcdatamodel */;
+			path = SoftTecoTestApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F3BAE85C1A65205100A9570D /* Project object */;
+}
