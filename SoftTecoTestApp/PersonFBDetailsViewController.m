@@ -70,7 +70,7 @@
                 
                 //Background thread
                 NSString *urlText = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?type=large", userID];
-                NSLog(@"%@", urlText);
+//                NSLog(@"%@", urlText);
                 NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlText]];
                 UIImage *profilePic = [UIImage imageWithData:imageData];
                 

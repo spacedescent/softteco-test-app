@@ -24,8 +24,6 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property NSMutableArray *sectionChanges;
-@property NSMutableArray *itemChanges;
 
 @end
 
@@ -36,7 +34,7 @@
     
     // Register observer to receive notifications on Address Book data loading completion
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addressBookDataLoaded:) name:@"AddressBookDataLoadedNotification" object:nil];
-    NSLog(@"=== AddressBookDataLoadedNotification - observer added ===");
+//    NSLog(@"=== AddressBookDataLoadedNotification - observer added ===");
     
     // Forcing FetchedResultsController to update its data
     NSError *error;
@@ -76,7 +74,7 @@
 
 - (void)addressBookDataLoaded:(NSNotification *)notification
 {
-    NSLog(@"=== AddressBookDataLoadedNotification received ===");
+//    NSLog(@"=== AddressBookDataLoadedNotification received ===");
     
     // Forcing FetchedResultsController to update its data
     NSError *error;

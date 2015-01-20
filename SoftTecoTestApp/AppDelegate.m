@@ -34,7 +34,7 @@
         [firstViewController performSelector:setMOCSelector withObject:self.managedObjectContext];
         #pragma clang diagnostic pop
         
-        NSLog(@"Passed MOC to %@", [firstViewController description]);
+//        NSLog(@"Passed MOC to %@", [firstViewController description]);
     }
 
     // Loading data from address book and storing in Core Data: moved to applicationDidBecomeActive: to update data, if someone added contact, when application is in background
@@ -84,7 +84,7 @@
 
 -(void)loadContactsFromAddressBookByAddressBook:(ABAddressBookRef)addressBook
 {
-    NSLog(@"=== begin loading data === ");
+//    NSLog(@"=== Begin loading data === ");
     CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeople(addressBook);
     CFIndex numberOfPeople = ABAddressBookGetPersonCount(addressBook);
     
@@ -117,7 +117,7 @@
     [self.managedObjectContext save:&error];
     
     // Send a notification to view controller to update view
-    NSLog(@"=== AddressBookDataLoadedNotification sent ===");
+//    NSLog(@"=== AddressBookDataLoadedNotification sent ===");
     [[NSNotificationCenter defaultCenter] postNotificationName:@"AddressBookDataLoadedNotification" object:nil];
 }
 
