@@ -21,7 +21,6 @@
     self.emailLabel.text = _person.email.length ? _person.email : NSLocalizedString(@"[ No email provided ]", @"No email");
     self.fullNameLabel.text = _person.fullName;
     
-    // nil is setting to avoid phantom images in reusable cells
     self.imageView.image = (_person.imageData.length) ? [UIImage imageWithData:_person.imageData] :
                                                         [UIImage imageNamed:@"user_avatar_empty"];
 }
@@ -30,6 +29,7 @@
 {
     [super drawRect:rect];
     
+    // Drawing rounded rect border around the cell
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:4.0f];
     [[UIColor blackColor] setStroke];
     [path stroke];

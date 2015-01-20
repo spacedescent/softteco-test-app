@@ -115,7 +115,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Participants" id="zu8-y8-4sN">
-                        <barButtonItem key="rightBarButtonItem" title="I" style="plain" id="qfE-gU-zAh">
+                        <barButtonItem key="rightBarButtonItem" title="I" id="qfE-gU-zAh">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Gk0-or-hod">
                                 <rect key="frame" x="-23" y="-15" width="133" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

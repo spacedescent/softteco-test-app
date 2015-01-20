@@ -23,7 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = [self.person.fullName stringByAppendingString:@" FB info"];
+    self.title = [self.person.fullName stringByAppendingString:NSLocalizedString(@" FB info", @" FB info")];
     
     self.personFBNameLabel.text = self.person.fullName;
     

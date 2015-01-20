@@ -32,6 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = NSLocalizedString(@"Participants", @"Participants");
+    
     // Register observer to receive notifications on Address Book data loading completion
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addressBookDataLoaded:) name:@"AddressBookDataLoadedNotification" object:nil];
 //    NSLog(@"=== AddressBookDataLoadedNotification - observer added ===");
