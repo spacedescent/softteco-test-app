@@ -19,9 +19,9 @@
 		F3BAE87B1A65205100A9570D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3BAE8791A65205100A9570D /* LaunchScreen.xib */; };
 		F3BAE8871A65205200A9570D /* SoftTecoTestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BAE8861A65205200A9570D /* SoftTecoTestAppTests.m */; };
 		F3BAE8911A6520C900A9570D /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BAE8901A6520C900A9570D /* AddressBook.framework */; };
-		F3BE9E2E1A67CB4B00093FFE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BE9E2D1A67CB4B00093FFE /* FacebookSDK.framework */; };
 		F3BE9E311A67D6C300093FFE /* FBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BE9E301A67D6C300093FFE /* FBLoginViewController.m */; };
 		F3BE9E341A67E5D000093FFE /* PersonFBDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BE9E331A67E5D000093FFE /* PersonFBDetailsViewController.m */; };
+		F3E6DD401A7006A000401E94 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E6DD3F1A7006A000401E94 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,11 +56,11 @@
 		F3BAE8851A65205200A9570D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3BAE8861A65205200A9570D /* SoftTecoTestAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoftTecoTestAppTests.m; sourceTree = "<group>"; };
 		F3BAE8901A6520C900A9570D /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		F3BE9E2D1A67CB4B00093FFE /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		F3BE9E2F1A67D6C300093FFE /* FBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginViewController.h; sourceTree = "<group>"; };
 		F3BE9E301A67D6C300093FFE /* FBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginViewController.m; sourceTree = "<group>"; };
 		F3BE9E321A67E5D000093FFE /* PersonFBDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonFBDetailsViewController.h; sourceTree = "<group>"; };
 		F3BE9E331A67E5D000093FFE /* PersonFBDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonFBDetailsViewController.m; sourceTree = "<group>"; };
+		F3E6DD3F1A7006A000401E94 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3BE9E2E1A67CB4B00093FFE /* FacebookSDK.framework in Frameworks */,
+				F3E6DD401A7006A000401E94 /* FacebookSDK.framework in Frameworks */,
 				F3BAE8911A6520C900A9570D /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,7 +98,7 @@
 		F3BAE85B1A65205100A9570D = {
 			isa = PBXGroup;
 			children = (
-				F3BE9E2D1A67CB4B00093FFE /* FacebookSDK.framework */,
+				F3E6DD3F1A7006A000401E94 /* FacebookSDK.framework */,
 				F3BAE8901A6520C900A9570D /* AddressBook.framework */,
 				F3BAE8661A65205100A9570D /* SoftTecoTestApp */,
 				F3BAE8831A65205200A9570D /* SoftTecoTestAppTests */,
@@ -395,9 +395,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/Sp/Documents/FacebookSDK,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SoftTecoTestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -409,9 +410,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/Sp/Documents/FacebookSDK,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SoftTecoTestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
