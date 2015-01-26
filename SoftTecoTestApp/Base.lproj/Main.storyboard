@@ -8,7 +8,7 @@
         <!--Participants-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="PersonsViewController" sceneMemberID="viewController">
+                <viewController title="Participants" id="vXZ-lx-hvc" customClass="PersonsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -200,10 +200,10 @@
             </objects>
             <point key="canvasLocation" x="1067" y="737"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Facebook Login-->
         <scene sceneID="g0P-No-tpM">
             <objects>
-                <viewController id="HUs-uS-WDO" customClass="FBLoginViewController" sceneMemberID="viewController">
+                <viewController title="Facebook Login" id="HUs-uS-WDO" customClass="FBLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NH5-8Q-Aui"/>
                         <viewControllerLayoutGuide type="bottom" id="rOY-Mx-xwk"/>

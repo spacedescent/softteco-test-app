@@ -22,7 +22,6 @@
     FBLoginView *loginView = [[FBLoginView alloc] init];
     loginView.center = self.view.center;
     [self.view addSubview:loginView];
-    self.title = NSLocalizedString(@"Facebook login", @"Facebook login");
 }
 
 - (void)didReceiveMemoryWarning {

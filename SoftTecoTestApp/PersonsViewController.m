@@ -20,6 +20,11 @@
 #define COLLECTION_VIEW_CELL_INSET_RIGHT 20
 #define COLLECTION_VIEW_CELL_INSET_BOTTOM 20
 
+#define ALERT_DISMISS_BUTTON NSLocalizedString(@"OK", @"OK")
+#define ALERT_WARNING NSLocalizedString(@"Warning", @"Warning")
+#define ALERT_SORRY NSLocalizedString(@"Sorry", @"Sorry")
+#define ALERT_PLEASE_LOGIN NSLocalizedString(@"Login Facebook to watch user details!", @"Not logged")
+
 
 @interface PersonsViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, PersistenceManagerABErrorDelegate>
 
@@ -33,8 +38,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = NSLocalizedString(@"Participants", @"Participants");
-    
     self.managedObjectContext = [PersistenceManager sharedInstance].managedObjectContext;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -42,8 +45,6 @@
                                                  name:@"AddressBookDataLoadedNotification"
                                                object:nil];
     
-//    NSLog(@"=== AddressBookDataLoadedNotification - observer added ===");
-   
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(applicationDidBecomeActive)
                                                  name:@"UIApplicationDidBecomeActiveNotification"
@@ -51,9 +52,10 @@
 }
 
 - (void) AddressBookErrorOccured:(NSString *)errorMessage {
-    [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Sorry", @"Sorry")
+    [[[UIAlertView alloc] initWithTitle:ALERT_SORRY
                                 message:errorMessage
-                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+                               delegate:nil cancelButtonTitle:ALERT_DISMISS_BUTTON
+                      otherButtonTitles:nil, nil] show];
 }
 
 - (void)dealloc {
@@ -85,14 +87,11 @@
 }
 
 - (void)addressBookDataLoaded:(NSNotification *)notification {
-//    NSLog(@"=== AddressBookDataLoadedNotification received ===");
-    
     // Forcing FetchedResultsController to update its data
     NSError *error;
     [self.fetchedResultsController performFetch:&error];
     
     // We are in the background queue
-    //[self.collectionView setContentOffset:CGPointZero animated:NO];
     [self.collectionView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
 }
 
@@ -117,8 +116,6 @@
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
      if ([[self.fetchedResultsController sections] count] > 0) {
          id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-         
-         // NSLog(@"%lu", (unsigned long)[sectionInfo numberOfObjects]);
          return [sectionInfo numberOfObjects];
      } else
      return 0;
@@ -152,18 +149,16 @@
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (FBSession.activeSession.isOpen)
-    {
+    if (FBSession.activeSession.isOpen) {
         PersonInfoCell *cell = (PersonInfoCell *)[collectionView cellForItemAtIndexPath:indexPath];
         
         // Passing Person data in sender argument to prepareForSegue
         [self performSegueWithIdentifier:@"Show FB Details" sender:cell.person];
     }
-    else
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning", @"Warning")
-                                                        message:NSLocalizedString(@"Login Facebook to watch user details!", @"Not logged")
-                                                       delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"OK")
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:ALERT_WARNING
+                                                        message:ALERT_PLEASE_LOGIN
+                                                       delegate:nil cancelButtonTitle:ALERT_DISMISS_BUTTON
                                               otherButtonTitles:nil, nil];
         [alert show];
     }

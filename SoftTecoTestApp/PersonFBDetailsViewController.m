@@ -10,6 +10,9 @@
 #import "Person.h"
 #import <FacebookSDK/FacebookSDK.h>
 
+#define ALERT_FACEBOOK_USER_NOT_FOUND NSLocalizedString(@"[ User not found on Facebook ]", @"User not found on Facebook")
+#define TITLE_LAST_PART NSLocalizedString(@" FB info", @" FB info")
+
 @interface PersonFBDetailsViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
@@ -23,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = [self.person.fullName stringByAppendingString:NSLocalizedString(@" FB info", @" FB info")];
+    self.title = [self.person.fullName stringByAppendingString:TITLE_LAST_PART];
     
     NSString *personFacebookName = self.person.facebookName;
     NSData *personFBPictureData = self.person.facebookPicture;
@@ -60,7 +63,7 @@
                 
                 if(!userID || !userName) {
                     dispatch_async(dispatch_get_main_queue(), ^(void) {
-                        self.personFBNameLabel.text = NSLocalizedString(@"[ User not found on Facebook ]", @"User not found on Facebook");
+                        self.personFBNameLabel.text = ALERT_FACEBOOK_USER_NOT_FOUND;
                     });
                     return;
                 }

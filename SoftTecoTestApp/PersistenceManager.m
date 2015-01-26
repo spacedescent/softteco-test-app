@@ -9,6 +9,8 @@
 #import "PersistenceManager.h"
 #import "Person+AddressBook.h"
 
+#define ALERT_AB_ACCESS_DENIED NSLocalizedString(@"Address Book access denied", @"Address Book access denied")
+
 @implementation PersistenceManager
 
 + (PersistenceManager *) sharedInstance {
@@ -32,7 +34,7 @@
         case kABAuthorizationStatusDenied:
         case kABAuthorizationStatusRestricted: { // 1
             NSLog(@"Denied");
-            [delegateView AddressBookErrorOccured:NSLocalizedString(@"Address Book access denied", @"Address Book access denied")];
+            [delegateView AddressBookErrorOccured:ALERT_AB_ACCESS_DENIED];
             break;
         }
             
@@ -53,7 +55,7 @@
                     if (addressBook) {
                         CFRelease(addressBook);
                     }
-                    [delegateView AddressBookErrorOccured:NSLocalizedString(@"Address Book access denied", @"Address Book access denied")];
+                    [delegateView AddressBookErrorOccured:ALERT_AB_ACCESS_DENIED];
 
                 }
                 else { // 5
