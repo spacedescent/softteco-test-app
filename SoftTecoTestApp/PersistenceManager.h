@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@protocol PersistenceManagerABErrorDelegate <NSObject>
+@required
+- (void) AddressBookErrorOccured:(NSString *)errorMessage;
+@end
+
 @interface PersistenceManager : NSObject
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -18,5 +23,6 @@
 + (PersistenceManager *) sharedInstance;
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+- (void)loadContactsFromAddressBook:(id<PersistenceManagerABErrorDelegate>)delegateView;
 
 @end

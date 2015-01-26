@@ -5,8 +5,9 @@
 //  Created by Alexander Akimov on 1/26/15.
 //  Copyright (c) 2015 Alexander Akimov. All rights reserved.
 //
-
+#import <AddressBook/AddressBook.h>
 #import "PersistenceManager.h"
+#import "Person+AddressBook.h"
 
 @implementation PersistenceManager
 
@@ -20,6 +21,98 @@
     
     return _sharedInstance;
 }
+
+#pragma mark - AddressBook methods
+
+-(void)loadContactsFromAddressBook:(id<PersistenceManagerABErrorDelegate>)delegateView {
+    CFErrorRef *error = NULL;
+    ABAddressBookRef addressBook = NULL;
+    
+    switch (ABAddressBookGetAuthorizationStatus()) {
+        case kABAuthorizationStatusDenied:
+        case kABAuthorizationStatusRestricted: { // 1
+            NSLog(@"Denied");
+            [delegateView AddressBookErrorOccured:NSLocalizedString(@"Address Book access denied", @"Address Book access denied")];
+            break;
+        }
+            
+        case kABAuthorizationStatusAuthorized: { // 2
+            NSLog(@"Authorized");
+            addressBook = ABAddressBookCreateWithOptions(NULL, error);
+            [self loadContactsFromAddressBookByAddressBook:addressBook];
+            CFRelease(addressBook);
+            break;
+        }
+            
+        case kABAuthorizationStatusNotDetermined: { // 3
+            NSLog(@"Not determined");
+            addressBook = ABAddressBookCreateWithOptions(NULL, error);
+            ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef err) {
+                if (!granted) { // 4
+                    NSLog(@"Just denied");
+                    if (addressBook) {
+                        CFRelease(addressBook);
+                    }
+                    [delegateView AddressBookErrorOccured:NSLocalizedString(@"Address Book access denied", @"Address Book access denied")];
+
+                }
+                else { // 5
+                    NSLog(@"Just authorized");
+                    [self loadContactsFromAddressBookByAddressBook:addressBook];
+                    CFRelease(addressBook);
+                }
+            });
+            break;
+        }
+    }
+}
+
+-(void)loadContactsFromAddressBookByAddressBook:(ABAddressBookRef)addressBook
+{
+    //    NSLog(@"=== Begin loading data === ");
+    
+    CFArrayRef allPeople = ABAddressBookCopyArrayOfAllPeople(addressBook);
+    CFIndex numberOfPeople = ABAddressBookGetPersonCount(addressBook);
+    
+    for(int i = 0; i < numberOfPeople; i++) {
+        
+        ABRecordRef person = CFArrayGetValueAtIndex(allPeople, i);
+        
+        CFTypeRef cfFirstName = ABRecordCopyValue(person, kABPersonFirstNameProperty);
+        NSString *firstName = (__bridge_transfer NSString *)cfFirstName;
+        
+        
+        CFTypeRef cfLastName = ABRecordCopyValue(person, kABPersonLastNameProperty);
+        NSString *lastName = (__bridge_transfer NSString *)cfLastName;
+        
+        ABMultiValueRef emails = ABRecordCopyValue(person, kABPersonEmailProperty);
+        
+        NSString *email = nil;
+        
+        if(ABMultiValueGetCount(emails)) {
+            // Getting the 1st email
+            email = (__bridge_transfer NSString *) ABMultiValueCopyValueAtIndex(emails, 0);
+        }
+        
+        CFRelease(emails);
+        
+        CFDataRef cfImgData = ABPersonCopyImageData(person);
+        NSData  *imgData = (__bridge_transfer NSData *)cfImgData; // Will be nil if no image in Address Book
+        [Person personWithFirstName:firstName lastName:lastName email:email withImageData:imgData inContext:[PersistenceManager sharedInstance].managedObjectContext];
+    }
+    
+    CFRelease(allPeople);
+    
+    if(numberOfPeople) {
+        [[PersistenceManager sharedInstance] saveContext];
+    }
+    
+    // Send a notification to view controller to update view
+    //    NSLog(@"=== AddressBookDataLoadedNotification sent ===");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"AddressBookDataLoadedNotification" object:nil];
+}
+
+
 
 #pragma mark - Core Data stack
 

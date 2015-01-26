@@ -7,7 +7,7 @@
 //
 
 #import "PersonsViewController.h"
-#import "Person+AddressBook.h"
+#import "Person.h"
 #import "PersonInfoCell.h"
 #import "PersonFBDetailsViewController.h"
 #import "PersistenceManager.h"
@@ -21,7 +21,7 @@
 #define COLLECTION_VIEW_CELL_INSET_BOTTOM 20
 
 
-@interface PersonsViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
+@interface PersonsViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, PersistenceManagerABErrorDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
@@ -37,26 +37,30 @@
     
     self.managedObjectContext = [PersistenceManager sharedInstance].managedObjectContext;
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addressBookDataLoaded:) name:@"AddressBookDataLoadedNotification" object:nil];
-//    NSLog(@"=== AddressBookDataLoadedNotification - observer added ===");
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(addressBookDataLoaded:)
+                                                 name:@"AddressBookDataLoadedNotification"
+                                               object:nil];
     
-    // Forcing FetchedResultsController to update its data
-    NSError *error;
-    [self.fetchedResultsController performFetch:&error];
+//    NSLog(@"=== AddressBookDataLoadedNotification - observer added ===");
+   
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationDidBecomeActive)
+                                                 name:@"UIApplicationDidBecomeActiveNotification"
+                                               object:nil];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void) AddressBookErrorOccured:(NSString *)errorMessage {
+    [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Sorry", @"Sorry")
+                                message:errorMessage
+                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
-{
+- (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
     _managedObjectContext = managedObjectContext;
     
     // Creating FetchiedResultsController on given MOC to use with our Collection View
@@ -76,21 +80,23 @@
                                      cacheName:nil];
 }
 
-- (void)addressBookDataLoaded:(NSNotification *)notification
-{
+- (void)applicationDidBecomeActive {
+    [[PersistenceManager sharedInstance] loadContactsFromAddressBook:self];
+}
+
+- (void)addressBookDataLoaded:(NSNotification *)notification {
 //    NSLog(@"=== AddressBookDataLoadedNotification received ===");
     
     // Forcing FetchedResultsController to update its data
     NSError *error;
     [self.fetchedResultsController performFetch:&error];
     
-    // Update Collection view (we are getting this notification not from the main queue)
+    // We are in the background queue
     //[self.collectionView setContentOffset:CGPointZero animated:NO];
     [self.collectionView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
 }
 
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"Show FB Details"])
     {
         if([segue.destinationViewController isKindOfClass:[PersonFBDetailsViewController class]])
@@ -145,8 +151,7 @@
 */
 
 #pragma mark - UICollectionViewDelegate
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (FBSession.activeSession.isOpen)
     {
         PersonInfoCell *cell = (PersonInfoCell *)[collectionView cellForItemAtIndexPath:indexPath];
