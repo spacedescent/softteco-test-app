@@ -113,8 +113,9 @@
         
     }
     
-    NSError *error;
-    [self.managedObjectContext save:&error];
+    if(numberOfPeople) {
+        [self saveContext];
+    }
     
     // Send a notification to view controller to update view
 //    NSLog(@"=== AddressBookDataLoadedNotification sent ===");
