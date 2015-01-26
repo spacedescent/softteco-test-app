@@ -25,14 +25,4 @@
                                                         [UIImage imageNamed:@"user_avatar_empty"];
 }
 
--(void)drawRect:(CGRect)rect
-{
-    [super drawRect:rect];
-    
-    // Drawing rounded rect border around the cell
-    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:4.0f];
-    [[UIColor blackColor] setStroke];
-    [path stroke];
-}
-
 @end

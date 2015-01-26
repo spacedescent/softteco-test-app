@@ -126,7 +126,8 @@
 // 3
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PersonInfoCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"Person Cell" forIndexPath:indexPath];
-    
+    cell.layer.borderWidth = 2.0f;
+    cell.layer.cornerRadius = 4.0f;
     Person *person = (Person *)[self.fetchedResultsController objectAtIndexPath:indexPath];
     
     cell.person = person;
