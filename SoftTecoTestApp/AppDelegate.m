@@ -43,42 +43,42 @@
     return YES;
 }
 
--(void)loadContactsFromAddressBook
-{
+-(void)loadContactsFromAddressBook {
     CFErrorRef *error = NULL;
     ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, error);
     
-    if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusDenied ||
-        ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusRestricted){
-        //1
-        NSLog(@"Denied");
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Sorry", @"Sorry")
-                                                        message:NSLocalizedString(@"Address Book access denied", @"Address Book access denied")
-                                                       delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
-    } else if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized){
-        //2
-        NSLog(@"Authorized");
-        [self loadContactsFromAddressBookByAddressBook:addressBook];
-    } else{ //ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined
-        //3
-        NSLog(@"Not determined");
-        
-        ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef err) {
-            if (!granted){
-                //4
-                NSLog(@"Just denied");
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Sorry", @"Sorry")
-                                                                message:NSLocalizedString(@"Address Book access denied", @"Address Book access denied")
-                                                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                [alert show];
-                return;
-            }
-            //5
-            NSLog(@"Just authorized");
+    switch (ABAddressBookGetAuthorizationStatus()) {
+        case kABAuthorizationStatusDenied:
+        case kABAuthorizationStatusRestricted: { // 1
+            NSLog(@"Denied");
+            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Sorry", @"Sorry")
+                                        message:NSLocalizedString(@"Address Book access denied", @"Address Book access denied")
+                                       delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+            break;
+        }
             
+        case kABAuthorizationStatusAuthorized: { // 2
+            NSLog(@"Authorized");
             [self loadContactsFromAddressBookByAddressBook:addressBook];
-        });
+            break;
+        }
+            
+        case kABAuthorizationStatusNotDetermined: { // 3
+            NSLog(@"Not determined");
+            ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef err) {
+                if (!granted) { // 4
+                    NSLog(@"Just denied");
+                    [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Sorry", @"Sorry")
+                                                message:NSLocalizedString(@"Address Book access denied", @"Address Book access denied")
+                                               delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+                }
+                else { // 5
+                    NSLog(@"Just authorized");
+                    [self loadContactsFromAddressBookByAddressBook:addressBook];
+                }
+            });
+            break;
+        }
     }
     
     if (addressBook) {
