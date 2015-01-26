@@ -10,6 +10,7 @@
 		F3431FB71A654AF80092F753 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = F3431FB61A654AF80092F753 /* Person.m */; };
 		F3431FBD1A654F830092F753 /* Person+AddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = F3431FBC1A654F830092F753 /* Person+AddressBook.m */; };
 		F3431FC11A65A3300092F753 /* PersonInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3431FC01A65A3300092F753 /* PersonInfoCell.m */; };
+		F3B86E7E1A764365000FAF1F /* PersistenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B86E7D1A764365000FAF1F /* PersistenceManager.m */; };
 		F3BAE86A1A65205100A9570D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BAE8691A65205100A9570D /* main.m */; };
 		F3BAE86D1A65205100A9570D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3BAE86C1A65205100A9570D /* AppDelegate.m */; };
 		F3BAE8701A65205100A9570D /* SoftTecoTestApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3BAE86E1A65205100A9570D /* SoftTecoTestApp.xcdatamodeld */; };
@@ -41,6 +42,8 @@
 		F3431FBC1A654F830092F753 /* Person+AddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+AddressBook.m"; sourceTree = "<group>"; };
 		F3431FBF1A65A3300092F753 /* PersonInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonInfoCell.h; sourceTree = "<group>"; };
 		F3431FC01A65A3300092F753 /* PersonInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonInfoCell.m; sourceTree = "<group>"; };
+		F3B86E7C1A764365000FAF1F /* PersistenceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistenceManager.h; sourceTree = "<group>"; };
+		F3B86E7D1A764365000FAF1F /* PersistenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistenceManager.m; sourceTree = "<group>"; };
 		F3BAE8641A65205100A9570D /* SoftTecoTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoftTecoTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BAE8681A65205100A9570D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3BAE8691A65205100A9570D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -86,6 +89,8 @@
 		F3431FB41A654A940092F753 /* Core Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				F3B86E7C1A764365000FAF1F /* PersistenceManager.h */,
+				F3B86E7D1A764365000FAF1F /* PersistenceManager.m */,
 				F3431FBB1A654F830092F753 /* Person+AddressBook.h */,
 				F3431FBC1A654F830092F753 /* Person+AddressBook.m */,
 				F3BAE86E1A65205100A9570D /* SoftTecoTestApp.xcdatamodeld */,
@@ -268,6 +273,7 @@
 				F3BE9E311A67D6C300093FFE /* FBLoginViewController.m in Sources */,
 				F3BAE86D1A65205100A9570D /* AppDelegate.m in Sources */,
 				F3431FBD1A654F830092F753 /* Person+AddressBook.m in Sources */,
+				F3B86E7E1A764365000FAF1F /* PersistenceManager.m in Sources */,
 				F3431FB71A654AF80092F753 /* Person.m in Sources */,
 				F3BAE8731A65205100A9570D /* PersonsViewController.m in Sources */,
 				F3BAE86A1A65205100A9570D /* main.m in Sources */,

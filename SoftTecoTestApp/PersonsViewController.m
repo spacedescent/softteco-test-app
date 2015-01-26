@@ -10,6 +10,7 @@
 #import "Person+AddressBook.h"
 #import "PersonInfoCell.h"
 #import "PersonFBDetailsViewController.h"
+#import "PersistenceManager.h"
 #import <CoreData/CoreData.h>
 #import <FacebookSDK/FacebookSDK.h>
 
@@ -34,7 +35,8 @@
     
     self.title = NSLocalizedString(@"Participants", @"Participants");
     
-    // Register observer to receive notifications on Address Book data loading completion
+    self.managedObjectContext = [PersistenceManager sharedInstance].managedObjectContext;
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addressBookDataLoaded:) name:@"AddressBookDataLoadedNotification" object:nil];
 //    NSLog(@"=== AddressBookDataLoadedNotification - observer added ===");
     
