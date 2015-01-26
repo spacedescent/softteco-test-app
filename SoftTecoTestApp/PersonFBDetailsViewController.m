@@ -25,11 +25,20 @@
     
     self.title = [self.person.fullName stringByAppendingString:NSLocalizedString(@" FB info", @" FB info")];
     
-    self.personFBNameLabel.text = self.person.fullName;
+    NSString *personFacebookName = self.person.facebookName;
+    NSData *personFBPictureData = self.person.facebookPicture;
     
-    if (FBSession.activeSession.isOpen) {
+    if(personFacebookName && personFBPictureData) {
+        self.personFBNameLabel.text = personFacebookName;
+        UIImage *profilePic = [UIImage imageWithData:personFBPictureData];
+        self.avatarImageView.image = profilePic;
+        [self.activityIndicator stopAnimating];
+    }
+    else if (FBSession.activeSession.isOpen) {
         __block NSString *userID;
         __block NSString *userName;
+        
+        self.personFBNameLabel.text = self.person.fullName;
         
         NSString *requestStr = [NSString stringWithFormat:@"search?q=%@+%@&type=user&limit=1", self.person.firstName, self.person.lastName];
         // Make appropriate encoding for russian names
@@ -56,6 +65,8 @@
                     return;
                 }
                 
+                self.person.facebookName = userName;
+                
                 dispatch_async(dispatch_get_main_queue(), ^(void) {
                     self.personFBNameLabel.text = userName;
                 });
@@ -64,6 +75,7 @@
                 
                 NSString *urlText = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?type=large", userID];
                 NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlText]];
+                self.person.facebookPicture = imageData;
                 UIImage *profilePic = [UIImage imageWithData:imageData];
                 
                 dispatch_async(dispatch_get_main_queue(), ^(void) {
