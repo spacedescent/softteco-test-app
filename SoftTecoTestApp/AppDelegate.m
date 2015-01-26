@@ -80,6 +80,10 @@
             [self loadContactsFromAddressBookByAddressBook:addressBook];
         });
     }
+    
+    if (addressBook) {
+        CFRelease(addressBook);
+    }
 }
 
 -(void)loadContactsFromAddressBookByAddressBook:(ABAddressBookRef)addressBook
